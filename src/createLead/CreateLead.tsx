@@ -85,7 +85,7 @@ export const CreateLead = ({
           name="lastContacted"
           value={formData.lastContacted}
           onChange={handleChange}
-          className="w-full border p-2 mb-3 rounded"
+          className="w-full border p-2 mb-3 rounded bg-transparent"
         />
 
         <input
