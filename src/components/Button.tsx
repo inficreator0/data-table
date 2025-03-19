@@ -18,7 +18,9 @@ export const Button = (props: ButtonProps) => {
       onClick={props.onClick}
     >
       {props.icon}
-      <span className={'whitespace-nowrap'}>{props.label}</span>
+      <span className={cn('whitespace-nowrap', props.icon && 'hidden xs:block')}>
+        {props.label}
+      </span>
     </button>
   )
 }
