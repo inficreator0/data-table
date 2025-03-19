@@ -83,6 +83,7 @@ export const CreateLead = ({
         <input
           type="date"
           name="lastContacted"
+          placeholder='Last contacted'
           value={formData.lastContacted}
           onChange={handleChange}
           className="w-full border p-2 mb-3 rounded bg-transparent"
