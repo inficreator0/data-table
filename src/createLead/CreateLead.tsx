@@ -79,10 +79,7 @@ export const CreateLead = ({
           placeholder="Company"
           className="w-full border p-2 mb-3 rounded"
         />
-        <div className="flex gap-2 items-center justify-center mb-3">
-          <label className="text-sm text-[#75717a] whitespace-nowrap">
-            Stage:{' '}
-          </label>
+
           <input
             type="number"
             max={5}
@@ -90,10 +87,9 @@ export const CreateLead = ({
             name="stage"
             value={formData.stage}
             onChange={handleChange}
-            placeholder="Stage"
-            className="w-full border p-2 rounded"
+            placeholder="Stage 1-5"
+            className="w-full border p-2 mb-3 rounded"
           />
-        </div>
 
         <div className="flex gap-2 items-center justify-center mb-3">
           <label className="text-sm text-[#75717a] whitespace-nowrap">
