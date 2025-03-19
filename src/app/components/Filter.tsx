@@ -1,4 +1,4 @@
-import React, { ChangeEventHandler } from 'react'
+import React, { ChangeEventHandler, useState } from 'react'
 
 type FilterProps = {
   filterData: any
