@@ -178,6 +178,8 @@ export const DataTable = <T extends Record<string, any>>({
             'sticky',
             'rounded-b-xl',
             'bottom-0',
+            'right-0',
+            'left-0',
             'h-11',
             'overflow-hidden',
             'items-center',

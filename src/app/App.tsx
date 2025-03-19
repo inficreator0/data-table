@@ -147,7 +147,7 @@ export const App = () => {
   }
 
   return (
-    <div className="flex flex-col bg-[#faf9f5] px-20 py-10 h-screen gap-3">
+    <div className="flex flex-col bg-[#faf9f5] px-4 sm:px-8 md:px-20 py-10 h-screen gap-3">
       <div className="flex justify-between items-center">
         <span className=" font-semibold text-2xl text-[#28272a]">Leads</span>
         <div className="gap-x-2 flex">
