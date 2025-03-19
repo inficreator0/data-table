@@ -38,8 +38,8 @@ export const columnConfig: (
               <span
                 className={'text-xs font-medium text-[#6a1be0] self-center'}
               >
-                {rowData.name.split(' ')?.[0]?.[0]}
-                {rowData.name.split(' ')?.[1]?.[0]}
+                {rowData.name?.split(' ')?.[0]?.[0]}
+                {rowData.name?.split(' ')?.[1]?.[0]}
               </span>
             </div>
             <div className={'flex justify-center flex-col'}>

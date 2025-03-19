@@ -39,9 +39,9 @@ export const getData = ({
   if (searchString) {
     wholeData = wholeData.filter(
       (item) =>
-        item.name.toLowerCase().includes(searchString.toLowerCase()) ||
-        item.company.toLowerCase().includes(searchString.toLowerCase()) ||
-        item.email.toLowerCase().includes(searchString.toLowerCase()),
+        item.name?.toLowerCase().includes(searchString?.toLowerCase()) ||
+        item.company?.toLowerCase().includes(searchString?.toLowerCase()) ||
+        item.email?.toLowerCase().includes(searchString?.toLowerCase()),
     )
   }
 
