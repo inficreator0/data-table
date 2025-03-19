@@ -1,4 +1,4 @@
-import React, {useRef, useEffect } from 'react'
+import React, { useRef, useEffect } from 'react'
 
 interface DropDownProps {
   options: Option[]
@@ -38,7 +38,7 @@ export const Dropdown = (props: DropDownProps) => {
   return (
     <div className="relative" ref={dropdownRef}>
       {props.open && (
-        <div className="fixed w-fit bg-white border border-gray-300 shadow-md rounded-md z-[1000]">
+        <div className="absolute left-[-60px] w-fit bg-white border border-gray-300 shadow-md rounded-md z-50">
           <ul className="py-2">
             {props.options.map((option) => (
               <li

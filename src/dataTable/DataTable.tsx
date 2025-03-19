@@ -71,7 +71,7 @@ export const DataTable = <T extends Record<string, any>>({
           {Math.min(page * rowsPerPage, totalRows)} of {totalRows} rows
         </span>
       ) : null}
-      <div className="max-h-full w-full border border-zinc-300 rounded-xl bg-slate-50 overflow-scroll">
+      <div className="max-h-full w-full border border-zinc-300 rounded-xl bg-slate-50 overflow-scroll" style={{scrollbarWidth: 'none'}}>
         <table
           className="table-fixed w-auto
           min-w-full

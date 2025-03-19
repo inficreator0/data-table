@@ -6,6 +6,7 @@ import { CheckCircleIcon, ClockIcon } from '@heroicons/react/24/outline'
 import { EllipsisVerticalIcon } from '@heroicons/react/16/solid'
 import React, { useState } from 'react'
 import { Dropdown, Option } from '../components/DropDown'
+import { log } from 'console'
 
 const totalStage = [
   { id: 1, name: 'Intro call', status: true },
@@ -35,8 +36,8 @@ export const columnConfig: (
               <span
                 className={'text-xs font-medium text-[#6a1be0] self-center'}
               >
-                {rowData.name.split(' ')[0][0]}
-                {rowData.name.split(' ')?.[1][0]}
+                {rowData.name.split(' ')?.[0]?.[0]}
+                {rowData.name.split(' ')?.[1]?.[0]}
               </span>
             </div>
             <div className={'flex justify-center flex-col'}>

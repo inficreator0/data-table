@@ -11,7 +11,7 @@ export const SearchBar = ({ searchString, onSearch }: SearchBarProps) => {
   const [lastSearchString, setLastSearchString] = useState(searchString ?? '')
 
   const listener = (event: KeyboardEvent) => {
-    if (event.code === 'Enter' && search !== lastSearchString) {
+    if (event.key === 'Enter' && search !== lastSearchString) {
       setLastSearchString(search)
       onSearch(search)
     }
@@ -19,10 +19,10 @@ export const SearchBar = ({ searchString, onSearch }: SearchBarProps) => {
 
   useEffect(() => {
     const searchBar = document.getElementById('search-bar')
-    if (searchBar) searchBar.addEventListener('keypress', listener)
+    if (searchBar) searchBar.addEventListener('keydown', listener)
 
     return () => {
-      searchBar?.removeEventListener('keypress', listener)
+      searchBar?.removeEventListener('keydown', listener)
     }
   }, [search, lastSearchString])
 
