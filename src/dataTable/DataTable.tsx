@@ -94,10 +94,10 @@ export const DataTable = <T extends Record<string, any>>({
               {selectionEnabled && (
                 <th key={'checkbox'}>
                   <div
-                    className={cn('flex flex-row justify-center align-middle cursor-pointer')}
-                  >
-                    <Checkbox checked={false} onChange={() => {}} />
-                  </div>
+                    className={cn(
+                      'flex flex-row justify-center align-middle cursor-pointer',
+                    )}
+                  />
                 </th>
               )}
               {columnConfig?.map((column) => {

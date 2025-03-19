@@ -83,7 +83,9 @@ export const columnConfig: (
             }
           >
             <CheckCircleIcon className={'h-4 w-4'} />
-            <span className={'font-medium text-xs'}>Engaged</span>
+            <span className={'font-medium text-xs hidden lg:block'}>
+              Engaged
+            </span>
           </div>
         ) : (
           <div
@@ -92,7 +94,9 @@ export const columnConfig: (
             }
           >
             <ClockIcon className={'h-4 w-4'} />
-            <span className={'font-medium text-xs'}>Not Engaged</span>
+            <span className={'font-medium text-xs hidden lg:block'}>
+              Not Engaged
+            </span>
           </div>
         )
       },
