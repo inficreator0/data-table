@@ -8,9 +8,11 @@ type SearchBarProps = {
 
 export const SearchBar = ({ searchString, onSearch }: SearchBarProps) => {
   const [search, setSearch] = useState(searchString)
+  const [lastSearchString, setLastSearchString] = useState(searchString ?? '')
 
   const listener = (event: KeyboardEvent) => {
-    if (event.key === 'Enter' && search.length) {
+    if (event.key === 'Enter' && search !== lastSearchString) {
+      setLastSearchString(search)
       onSearch(search)
     }
   }
@@ -22,7 +24,7 @@ export const SearchBar = ({ searchString, onSearch }: SearchBarProps) => {
     return () => {
       searchBar?.removeEventListener('keydown', listener)
     }
-  }, [search])
+  }, [search, lastSearchString])
 
   return (
     <div className="flex justify-center items-center w-full">
