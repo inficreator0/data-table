@@ -6,10 +6,10 @@ import { AdjustmentsHorizontalIcon } from '@heroicons/react/24/outline'
 import { Button } from '../components/Button'
 import { ArrowDownCircleIcon, PlusIcon } from '@heroicons/react/16/solid'
 import { Modal } from '../components/Modal'
-import { CreateLead } from './CreateLead'
 import { columnConfig } from './columnConfig'
 import { Filter } from './Filter'
 import { createOrUpdateData, deleteData, getData } from '../utils/utils'
+import { CreateLead } from '../createLead/CreateLead'
 
 export const App = () => {
   const [data, setData] = useState<Leads[]>([])
