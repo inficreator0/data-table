@@ -8,7 +8,12 @@ import { ArrowDownCircleIcon, PlusIcon } from '@heroicons/react/16/solid'
 import { Modal } from '../components/Modal'
 import { columnConfig } from './columnConfig'
 import { Filter } from './Filter'
-import { createOrUpdateData, deleteData, getData } from '../utils/utils'
+import {
+  createOrUpdateData,
+  deleteData,
+  exportToCSV,
+  getData,
+} from '../utils/utils'
 import { CreateLead } from '../createLead/CreateLead'
 
 export const App = () => {
@@ -57,7 +62,8 @@ export const App = () => {
   }
 
   const handleExportAll = () => {
-    //export all
+    const downloadData = data.filter((item) => selectedRows.includes(item.id))
+    exportToCSV(downloadData)
   }
 
   const handleOpenFilter = () => {

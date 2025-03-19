@@ -115,3 +115,27 @@ export const deleteData = (id: number) => {
 
   localStorage.setItem('leadsData', JSON.stringify(wholeData))
 }
+
+export const exportToCSV = (data: any[]) => {
+  if (!data.length) {
+    alert('Select data to download')
+    return null
+  }
+
+  const dataHeaders = Object.keys(data?.[0]).join(',')
+  const rowData = data.map((item) => Object.values(item).join(',')).join('\n')
+
+  const csv = `${dataHeaders}\n${rowData}`
+
+  const blob = new Blob([csv], { type: 'text/csv;charset=utf-8' })
+
+  const link = document.createElement('a')
+  if (link.download !== undefined) {
+    const url = URL.createObjectURL(blob)
+    link.setAttribute('href', url)
+    link.setAttribute('download', 'leads.csv')
+    document.body.appendChild(link)
+    link.click()
+    document.body.removeChild(link)
+  }
+}
