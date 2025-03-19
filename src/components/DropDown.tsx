@@ -1,6 +1,6 @@
 import React, { useRef, useEffect } from 'react'
 
-interface DropDownProps {
+type DropDownProps = {
   options: Option[]
   open: boolean
   setOpen: (open: boolean) => void

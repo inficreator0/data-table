@@ -1,20 +1,22 @@
 import { IColumConfig } from '../dataTable/interfaces'
 import { Leads } from './interfaces'
-import { Checkbox } from '../components/checkbox'
 import { cn } from '../utils/utils'
 import { CheckCircleIcon, ClockIcon } from '@heroicons/react/24/outline'
-import { EllipsisVerticalIcon } from '@heroicons/react/16/solid'
-import React, { useState } from 'react'
-import { Dropdown, Option } from '../components/DropDown'
-import { log } from 'console'
+import React from 'react'
+import { Option } from '../components/DropDown'
+import { Options } from './components/Options'
 
 const totalStage = [
+  // Assuming total 5 stages , this will come from api in ideal scenario
   { id: 1, name: 'Intro call', status: true },
   { id: 2, name: 'Assignment', status: true },
   { id: 3, name: 'HRM', status: true },
   { id: 4, name: 'Offer roll out', status: true },
   { id: 5, name: 'Joined', status: false },
 ]
+
+/* column config is the function useed to control the columns of data table.
+ To show a data point in column, just add the id as data key and headerLabel. {id: 'datakey', headerLabel: 'Label'} */
 
 export const columnConfig: (
   onOptionClick: (value: number, rowId: number) => void,
@@ -132,37 +134,4 @@ export const columnConfig: (
       },
     },
   ]
-}
-
-const Options = ({
-  options,
-  onOptionClick,
-}: {
-  options: Option[]
-  onOptionClick: (value: number) => void
-}) => {
-  const [open, setOpen] = useState(false)
-  const handleSelection = (value: number) => {
-    onOptionClick(value)
-  }
-
-  return (
-    <div
-      onClick={(e) => {
-        e.stopPropagation()
-        setOpen(true)
-      }}
-      className={'cursor-pointer p-2'}
-    >
-      <EllipsisVerticalIcon className={'h-4 w-4'} />
-      {open && (
-        <Dropdown
-          open={open}
-          setOpen={setOpen}
-          options={options}
-          onSelection={handleSelection}
-        />
-      )}
-    </div>
-  )
 }

@@ -7,7 +7,7 @@ import { Button } from '../components/Button'
 import { ArrowDownCircleIcon, PlusIcon } from '@heroicons/react/16/solid'
 import { Modal } from '../components/Modal'
 import { columnConfig } from './columnConfig'
-import { Filter } from './Filter'
+import { Filter } from './components/Filter'
 import {
   createOrUpdateData,
   deleteData,
@@ -20,7 +20,7 @@ export const App = () => {
   const [data, setData] = useState<Leads[]>([])
   const [total, setTotal] = useState<number>(0)
 
-  const [stateUpdated, setStateUpdated] = useState({ updated: false }) //used to handle create and delete data scenario
+  const [stateUpdated, setStateUpdated] = useState({ updated: false }) //used to handle create and delete data scenario since we don't have backend
   const [openFilter, setOpenFilter] = useState<boolean>(false)
   const [openCreateLead, setOpenCreateLead] = useState<boolean>(false)
   const [rowData, setRowData] = useState<Leads | null>(null)
