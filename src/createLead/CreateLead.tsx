@@ -79,26 +79,34 @@ export const CreateLead = ({
           placeholder="Company"
           className="w-full border p-2 mb-3 rounded"
         />
+        <div className="flex gap-2 items-center justify-center mb-3">
+          <label className="text-sm text-[#75717a] whitespace-nowrap">
+            Stage:{' '}
+          </label>
+          <input
+            type="number"
+            max={5}
+            min={1}
+            name="stage"
+            value={formData.stage}
+            onChange={handleChange}
+            placeholder="Stage"
+            className="w-full border p-2 rounded"
+          />
+        </div>
 
-        <input
-          type="date"
-          name="lastContacted"
-          placeholder='Last contacted'
-          value={formData.lastContacted}
-          onChange={handleChange}
-          className="w-full border p-2 mb-3 rounded bg-transparent"
-        />
-
-        <input
-          type="number"
-          max={5}
-          min={1}
-          name="stage"
-          value={formData.stage}
-          onChange={handleChange}
-          placeholder="Stage"
-          className="w-full border p-2 mb-3 rounded"
-        />
+        <div className="flex gap-2 items-center justify-center mb-3">
+          <label className="text-sm text-[#75717a] whitespace-nowrap">
+            Last Contacted:{' '}
+          </label>
+          <input
+            type="date"
+            name="lastContacted"
+            value={formData.lastContacted}
+            onChange={handleChange}
+            className="w-full border p-2 rounded bg-transparent h-[40px]"
+          />
+        </div>
 
         <label className="flex items-center space-x-2 mb-4">
           <input
